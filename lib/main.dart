@@ -21,16 +21,59 @@ class NinjaCard extends StatelessWidget {
       ),
       body: const Padding(
         padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
-        child: Column(children: <Widget>[
-          SimpleTextWidgetUtil(
-            'NAME',
-             Colors.grey, 2.0,
-              null,
-               FontWeight.normal
-               ),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Center(
+                child: CircleAvatar(
+                  radius: 40,
+                  backgroundImage: AssetImage('assets/ninja.png'),
+                ),
+              ),
 
-          SimpleTextWidgetUtil('Shinobi',Colors.amberAccent,2.0,28.0,FontWeight.bold),
-        ]),
+              Divider(
+                height: 60,
+                color: Colors.white,
+              ),
+              
+              SimpleTextWidgetUtil(
+                  'NAME', Colors.grey, 2.0, null, FontWeight.normal),
+              SizedBox(
+                height: 10.0,
+              ),
+              SimpleTextWidgetUtil(
+                  'Shinobi', Colors.amberAccent, 2.0, 28.0, FontWeight.bold),
+              SizedBox(
+                height: 30.0,
+              ),
+              SimpleTextWidgetUtil('CURRENT NINJA LEVEL', Colors.grey, 2.0,
+                  null, FontWeight.normal),
+              SizedBox(
+                height: 10.0,
+              ),
+              SimpleTextWidgetUtil(
+                  '8', Colors.amberAccent, 2.0, 28.0, FontWeight.bold),
+
+              SizedBox(height: 30.0,),
+              Row(
+                children: <Widget>[
+                  Icon(
+                    Icons.email,
+                    color: Colors.grey,
+                  ),
+
+                  SizedBox(width: 10.0,),
+
+                  SimpleTextWidgetUtil(
+                    'shinobi@gmail.com',
+                    Colors.grey,
+                    1.0,
+                    18.0,
+                    FontWeight.normal,
+                  ),
+                ],
+              )
+            ]),
       ),
     );
   }
