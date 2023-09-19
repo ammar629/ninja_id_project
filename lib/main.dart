@@ -14,7 +14,6 @@ class NinjaCard extends StatefulWidget {
 }
 
 class _NinjaCardState extends State<NinjaCard> {
-
   int ninjaLevel = 0;
 
   @override
@@ -27,6 +26,15 @@ class _NinjaCardState extends State<NinjaCard> {
         elevation: 0,
         centerTitle: true,
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            ninjaLevel++;
+          });
+        },
+        backgroundColor: Colors.grey[800],
+        child: const Icon(Icons.add),
+      ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
         child: Column(
@@ -38,42 +46,39 @@ class _NinjaCardState extends State<NinjaCard> {
                   backgroundImage: AssetImage('assets/ninja.png'),
                 ),
               ),
-
               const Divider(
                 height: 60,
                 color: Colors.white,
               ),
-              
               const SimpleTextWidgetUtil(
                   'NAME', Colors.grey, 2.0, null, FontWeight.normal),
               const SizedBox(
                 height: 10.0,
               ),
-
               const SimpleTextWidgetUtil(
                   'Shinobi', Colors.amberAccent, 2.0, 28.0, FontWeight.bold),
               const SizedBox(
                 height: 30.0,
               ),
-
-              const SimpleTextWidgetUtil('CURRENT NINJA LEVEL', Colors.grey, 2.0,
-                  null, FontWeight.normal),
+              const SimpleTextWidgetUtil('CURRENT NINJA LEVEL', Colors.grey,
+                  2.0, null, FontWeight.normal),
               const SizedBox(
                 height: 10.0,
               ),
-              SimpleTextWidgetUtil(
-                  '$ninjaLevel', Colors.amberAccent, 2.0, 28.0, FontWeight.bold),
-
-              const SizedBox(height: 30.0,),
+              SimpleTextWidgetUtil('$ninjaLevel', Colors.amberAccent, 2.0, 28.0,
+                  FontWeight.bold),
+              const SizedBox(
+                height: 30.0,
+              ),
               const Row(
                 children: <Widget>[
                   Icon(
                     Icons.email,
                     color: Colors.grey,
                   ),
-
-                  SizedBox(width: 10.0,),
-
+                  SizedBox(
+                    width: 10.0,
+                  ),
                   SimpleTextWidgetUtil(
                     'shinobi@gmail.com',
                     Colors.grey,
@@ -88,7 +93,6 @@ class _NinjaCardState extends State<NinjaCard> {
     );
   }
 }
-
 
 class SimpleTextWidgetUtil extends StatelessWidget {
   final String name;
