@@ -14,6 +14,9 @@ class NinjaCard extends StatefulWidget {
 }
 
 class _NinjaCardState extends State<NinjaCard> {
+
+  int ninjaLevel = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,43 +27,45 @@ class _NinjaCardState extends State<NinjaCard> {
         elevation: 0,
         centerTitle: true,
       ),
-      body: const Padding(
-        padding: EdgeInsets.fromLTRB(30, 40, 30, 0),
+      body: Padding(
+        padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Center(
+              const Center(
                 child: CircleAvatar(
                   radius: 40,
                   backgroundImage: AssetImage('assets/ninja.png'),
                 ),
               ),
 
-              Divider(
+              const Divider(
                 height: 60,
                 color: Colors.white,
               ),
               
-              SimpleTextWidgetUtil(
+              const SimpleTextWidgetUtil(
                   'NAME', Colors.grey, 2.0, null, FontWeight.normal),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
-              SimpleTextWidgetUtil(
+
+              const SimpleTextWidgetUtil(
                   'Shinobi', Colors.amberAccent, 2.0, 28.0, FontWeight.bold),
-              SizedBox(
+              const SizedBox(
                 height: 30.0,
               ),
-              SimpleTextWidgetUtil('CURRENT NINJA LEVEL', Colors.grey, 2.0,
+
+              const SimpleTextWidgetUtil('CURRENT NINJA LEVEL', Colors.grey, 2.0,
                   null, FontWeight.normal),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
               SimpleTextWidgetUtil(
-                  '8', Colors.amberAccent, 2.0, 28.0, FontWeight.bold),
+                  '$ninjaLevel', Colors.amberAccent, 2.0, 28.0, FontWeight.bold),
 
-              SizedBox(height: 30.0,),
-              Row(
+              const SizedBox(height: 30.0,),
+              const Row(
                 children: <Widget>[
                   Icon(
                     Icons.email,
