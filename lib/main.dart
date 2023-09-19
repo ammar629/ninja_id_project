@@ -6,9 +6,14 @@ void main() {
   ));
 }
 
-class NinjaCard extends StatelessWidget {
+class NinjaCard extends StatefulWidget {
   const NinjaCard({super.key});
 
+  @override
+  State<NinjaCard> createState() => _NinjaCardState();
+}
+
+class _NinjaCardState extends State<NinjaCard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,6 +83,7 @@ class NinjaCard extends StatelessWidget {
     );
   }
 }
+
 
 class SimpleTextWidgetUtil extends StatelessWidget {
   final String name;
